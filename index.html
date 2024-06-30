@@ -69,16 +69,19 @@
     <section id="home" class="banner_wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 order-lg-1 order-2 banner-content">
+                <div style="margin-top: 15px;" class="col-lg-7 order-lg-1 order-2 banner-content">
                     <h2>Hi, I'm </h2>
                     <h3 class="text-uppercase">Nishant Kumar</h3>
-                    <h1 class="text-uppercase">Python Programmer</b></h1>
+                    <div class="typewriter-container">
+                        <div style="color: rgb(13, 61, 61); font-weight: bold;" id="typewriter"></div>
+                    </div>
+                    <!-- <h1 class="text-uppercase"><b>Python Programmer</b></h1> -->
                     <br>
                     <a href="./doc/nishant_resume.pdf" class="btn" target="_blank">Download Resume</a>
                 </div>
                 <div class="col-lg-5 order-lg-2 order-1">
-                    <div class="top-right-img">
-                    <img decoding="async" style="border-radius: 20px; margin:2px;" src="Images/developer.png" class="img-fluid">
+                    <div style="text-align: center;" class="top-right-img">
+                    <img decoding="async" style="border-radius: 20px;" src="Images/developer.png" class="img-fluid">
                     </div>
                </div>
             </div>
@@ -556,8 +559,28 @@
     </div>
 </section>
 
+<div class="button_outer_container">
+    <div class="button_inner_container">
+        <button class="c-button c-button--gooey"> More Projects
+            <div class="c-button__blobs">
+            <div></div>
+            <div></div>
+            <div></div>
+            </div>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: block; height: 0; width: 0;">
+            <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                <feBlend in="SourceGraphic" in2="goo"></feBlend>
+            </filter>
+            </defs>
+        </svg>
+    </div>
+</div>
 
-    <!--Projects end-->
+<!--Projects end-->
 
 
 <!--Contact start-->
@@ -709,6 +732,6 @@
             });
         });  
     </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
