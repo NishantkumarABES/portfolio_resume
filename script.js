@@ -1,4 +1,4 @@
-const textArray = ["Python Programmer", "Data Analyst", "Machine Learning Enthusiast"];
+const textArray = ["Python Programmer", "Data Analyst", "ML Enthusiast"];
 const typingSpeed = 100;
 const erasingSpeed = 50;
 const delayBetweenWords = 2000; // Delay between current and next word
