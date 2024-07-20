@@ -3,13 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typewriter Effect</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Interactive Technology Grid</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- filter: grayscale(100%); -->
+    <style>
+        .tech-img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            border: solid black 2px;
+            object-fit: cover;
+            transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+            filter: drop-shadow(100%);
+            cursor: pointer;
+        }
+        .tech-img::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        .tech-img:hover::before {
+            top: 150%;
+            left: 150%;
+            opacity: 1;
+        }
+        .tech-img:hover {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .tech-name {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .tech-item:hover .tech-name{
+            font-weight: bold;
+        }
+        .tech-item {
+            margin-bottom: 20px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+        .right-half {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="typewriter-container">
-        <div id="typewriter"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 right-half">
+                <div class="row">
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="Python">
+                        <img src="Images/python_logo.png" alt="Python" class="tech-img">
+                        <div class="tech-name">Python</div>
+                    </div>
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="Java">
+                        <img src="Images/java_logo.png" alt="Java" class="tech-img">
+                        <div class="tech-name">Java</div>
+                    </div>
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="C/C++">
+                        <img src="Images/Cplusplus_logo.jpg" alt="C/C++" class="tech-img">
+                        <div class="tech-name">C/C++</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="Pandas">
+                        <img src="Images/pandas_logo.png" alt="Pandas" class="tech-img">
+                        <div class="tech-name">Pandas</div>
+                    </div>
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="NumPy">
+                        <img src="Images/numpy_logo.png" alt="NumPy" class="tech-img">
+                        <div class="tech-name">NumPy</div>
+                    </div>
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="PowerBI">
+                        <img src="Images/powerBI_logo.jpg" alt="PowerBI" class="tech-img">
+                        <div class="tech-name">PowerBI</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="Tech 1">
+                        <img src="Images/html_logo.jpg" alt="Tech 1" class="tech-img">
+                        <div class="tech-name">HTML</div>
+                    </div>
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="Tech 2">
+                        <img src="Images/CSS_logo.png" alt="Tech 2" class="tech-img">
+                        <div class="tech-name">CSS</div>
+                    </div>
+                    <div class="col-md-4 tech-item" data-toggle="modal" data-target="#techModal" data-tech="Tech 3">
+                        <img src="Images/javascript_logo.png" alt="Tech 3" class="tech-img">
+                        <div class="tech-name">Java Script</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="techModal" tabindex="-1" role="dialog" aria-labelledby="techModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="techModalLabel">Technology</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="" id="modal-tech-img">
+                    <p id="modal-tech-description">Technology description goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $('#techModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var tech = button.data('tech');
+            var modal = $(this);
+            modal.find('.modal-title').text(tech);
+            modal.find('#modal-tech-img').attr('src', button.find('img').attr('src'));
+            modal.find('#modal-tech-description').text(tech + ' description goes here.');
+        });
+    </script>
 </body>
 </html>

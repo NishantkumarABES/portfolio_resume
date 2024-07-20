@@ -119,6 +119,10 @@ h3{
 /* skills section styling */
 .skills{
     font-family: 'Poppins', sans-serif;
+    
+}
+.skills-content{
+    background-color: #fafafa;
 }
 .skills .skills-content{
     display: flex;
@@ -135,7 +139,7 @@ h3{
 .skills .skills-content .left .text{
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 70px;
 }
 .skills .skills-content .left p{
     text-align: justify;
@@ -194,7 +198,7 @@ h3{
     top: 0;
     background: crimson;
 }
-.skills-content .right .python::before{
+/* .skills-content .right .python::before{
     width: 85%;
 }
 .skills-content .right .java::before{
@@ -223,7 +227,7 @@ h3{
 }
 .skills-content .right .github::before{
     width: 60%;
-}
+} */
 
 
 /* responsive media query start */
@@ -502,3 +506,116 @@ h3{
 }
 
 
+/* .tech-img {
+    width: 135px;
+    height: 125px;
+    border-radius: 10px;
+    border: solid black 2px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    filter: drop-shadow(100%);
+    cursor: pointer;
+}
+.tech-img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.tech-name {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.tech-item:hover .tech-name{
+    font-weight: bold;
+}
+.tech-item {
+    margin-bottom: 15px;
+}
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+.right-half {
+    margin-left: auto;
+    margin-right: 0;
+} */
+
+
+
+
+
+#skills {
+    padding: 60px 0;
+    /* background-color: #f8f9fa; */
+}
+
+#skills h4 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#skills p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.tech-skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #007bff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.skill-item .icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.skill-item:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.skill-item i {
+    font-size: 1rem;
+}
+
+.tech-skills img{
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+}
